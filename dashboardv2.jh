@@ -1,0 +1,78 @@
+
+entity Dashboard {
+	name String
+    username String
+}
+ 
+ entity DashboardItem {
+   x  Integer
+   y  Integer
+   rows Integer
+   col Integer
+ }
+
+entity Widget {
+	name String
+    title String
+    componentName String
+    componentType String
+}
+
+entity WidgetType {
+	name String
+    
+    
+}
+ entity DataSource {
+     type String 
+      
+ }
+ 
+ entity Api {
+ 
+ }
+ 
+ entity ApiBannette {
+ apiInitialLoad String
+ apiSearch String
+ }
+
+// an ignored comment
+/** not an ignored comment */
+
+
+relationship OneToOne {
+	Api{api} to ApiBannette
+    DataSource {dataSource} to Api
+    WidgetType{widgetType} to DataSource
+}
+relationship OneToOne {
+
+Widget{widget} to WidgetType
+
+}
+
+relationship OneToOne {
+
+DashboardItem{item} to Widget
+
+}
+
+
+
+
+
+relationship ManyToOne {
+ DashboardItem{items} to Dashboard
+}
+
+paginate Dashboard , Widget with pagination
+
+// Use Data Transfer Objects (DTO)
+ dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
