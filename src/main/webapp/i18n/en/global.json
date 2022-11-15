@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "dashboard": "Dashboard",
+        "dashboardItem": "Dashboard Item",
+        "widget": "Widget",
+        "widgetType": "Widget Type",
+        "dataSource": "Data Source",
+        "api": "Api",
+        "apiBannette": "Api Bannette",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,24 @@
+{
+  "dashBoardDynamiqueApp": {
+    "api": {
+      "home": {
+        "title": "Apis",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Api",
+        "createOrEditLabel": "Create or edit a Api",
+        "notFound": "No Apis found"
+      },
+      "created": "A new Api is created with identifier {{ param }}",
+      "updated": "A Api is updated with identifier {{ param }}",
+      "deleted": "A Api is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Api {{ id }}?"
+      },
+      "detail": {
+        "title": "Api"
+      },
+      "id": "ID",
+      "api": "Api"
+    }
+  }
+}
