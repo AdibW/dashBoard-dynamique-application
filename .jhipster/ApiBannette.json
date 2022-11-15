@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115152549",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "api_bannette",
+  "fields": [
+    {
+      "fieldName": "apiInitialLoad",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apiSearch",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ApiBannette",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,25 @@
+{
+  "dashBoardDynamiqueApp": {
+    "widgetType": {
+      "home": {
+        "title": "Widget Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Widget Type",
+        "createOrEditLabel": "Create or edit a Widget Type",
+        "notFound": "No Widget Types found"
+      },
+      "created": "A new Widget Type is created with identifier {{ param }}",
+      "updated": "A Widget Type is updated with identifier {{ param }}",
+      "deleted": "A Widget Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Widget Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Widget Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "widgetType": "Widget Type"
+    }
+  }
+}

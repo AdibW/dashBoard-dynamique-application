@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dashboardItem">
+      <h2 data-cy="dashboardItemDetailsHeading">
+        <span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.detail.title">Dashboard Item</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dashboardItem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.x">X</span></dt>
+        <dd>
+          <span>{{ dashboardItem.x }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.y">Y</span></dt>
+        <dd>
+          <span>{{ dashboardItem.y }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.rows">Rows</span></dt>
+        <dd>
+          <span>{{ dashboardItem.rows }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.col">Col</span></dt>
+        <dd>
+          <span>{{ dashboardItem.col }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.item">Item</span></dt>
+        <dd>
+          <div *ngIf="dashboardItem.item">
+            <a [routerLink]="['/widget', dashboardItem.item.id, 'view']">{{ dashboardItem.item.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.dashboardItem.items">Items</span></dt>
+        <dd>
+          <div *ngIf="dashboardItem.items">
+            <a [routerLink]="['/dashboard', dashboardItem.items.id, 'view']">{{ dashboardItem.items.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dashboard-item', dashboardItem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

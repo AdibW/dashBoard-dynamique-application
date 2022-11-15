@@ -1,0 +1,99 @@
+<div>
+  <h2 id="page-heading" data-cy="WidgetTypeHeading">
+    <span jhiTranslate="dashBoardDynamiqueApp.widgetType.home.title">Widget Types</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dashBoardDynamiqueApp.widgetType.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-widget-type"
+        [routerLink]="['/widget-type/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dashBoardDynamiqueApp.widgetType.home.createLabel"> Create a new Widget Type </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="widgetTypes?.length === 0">
+    <span jhiTranslate="dashBoardDynamiqueApp.widgetType.home.notFound">No Widget Types found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="widgetTypes && widgetTypes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="dashBoardDynamiqueApp.widgetType.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="widgetType.id">
+            <div class="d-flex">
+              <span jhiTranslate="dashBoardDynamiqueApp.widgetType.widgetType">Widget Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let widgetType of widgetTypes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/widget-type', widgetType.id, 'view']">{{ widgetType.id }}</a>
+          </td>
+          <td>{{ widgetType.name }}</td>
+          <td>
+            <div *ngIf="widgetType.widgetType">
+              <a [routerLink]="['/data-source', widgetType.widgetType.id, 'view']">{{ widgetType.widgetType.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/widget-type', widgetType.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/widget-type', widgetType.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(widgetType)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
