@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-widget-heading" data-cy="WidgetCreateUpdateHeading" jhiTranslate="dashBoardDynamiqueApp.widget.home.createOrEditLabel">
+        Create or edit a Widget
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dashBoardDynamiqueApp.widget.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dashBoardDynamiqueApp.widget.title" for="field_title">Title</label>
+          <input type="text" class="form-control" name="title" id="field_title" data-cy="title" formControlName="title" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dashBoardDynamiqueApp.widget.componentName" for="field_componentName"
+            >Component Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="componentName"
+            id="field_componentName"
+            data-cy="componentName"
+            formControlName="componentName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dashBoardDynamiqueApp.widget.componentType" for="field_componentType"
+            >Component Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="componentType"
+            id="field_componentType"
+            data-cy="componentType"
+            formControlName="componentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dashBoardDynamiqueApp.widget.widget" for="field_widget">Widget</label>
+          <select
+            class="form-control"
+            id="field_widget"
+            data-cy="widget"
+            name="widget"
+            formControlName="widget"
+            [compareWith]="compareWidgetType"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="widgetTypeOption" *ngFor="let widgetTypeOption of widgetTypesSharedCollection">
+              {{ widgetTypeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

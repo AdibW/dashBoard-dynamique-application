@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115153810",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "widget",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "componentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "componentType",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Widget",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "widgetType",
+      "ownerSide": true,
+      "relationshipName": "widget",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

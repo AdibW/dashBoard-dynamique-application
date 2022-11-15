@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="widget">
+      <h2 data-cy="widgetDetailsHeading"><span jhiTranslate="dashBoardDynamiqueApp.widget.detail.title">Widget</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ widget.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.widget.name">Name</span></dt>
+        <dd>
+          <span>{{ widget.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.widget.title">Title</span></dt>
+        <dd>
+          <span>{{ widget.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.widget.componentName">Component Name</span></dt>
+        <dd>
+          <span>{{ widget.componentName }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.widget.componentType">Component Type</span></dt>
+        <dd>
+          <span>{{ widget.componentType }}</span>
+        </dd>
+        <dt><span jhiTranslate="dashBoardDynamiqueApp.widget.widget">Widget</span></dt>
+        <dd>
+          <div *ngIf="widget.widget">
+            <a [routerLink]="['/widget-type', widget.widget.id, 'view']">{{ widget.widget.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/widget', widget.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
