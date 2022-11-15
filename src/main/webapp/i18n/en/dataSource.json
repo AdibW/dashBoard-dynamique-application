@@ -1,0 +1,25 @@
+{
+  "dashBoardDynamiqueApp": {
+    "dataSource": {
+      "home": {
+        "title": "Data Sources",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Data Source",
+        "createOrEditLabel": "Create or edit a Data Source",
+        "notFound": "No Data Sources found"
+      },
+      "created": "A new Data Source is created with identifier {{ param }}",
+      "updated": "A Data Source is updated with identifier {{ param }}",
+      "deleted": "A Data Source is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Data Source {{ id }}?"
+      },
+      "detail": {
+        "title": "Data Source"
+      },
+      "id": "ID",
+      "type": "Type",
+      "dataSource": "Data Source"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115152543",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "dashboard",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Dashboard",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dashboardItem",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "dashboardItem",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

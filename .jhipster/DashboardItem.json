@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115152544",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "dashboard_item",
+  "fields": [
+    {
+      "fieldName": "x",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "y",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rows",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "col",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DashboardItem",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "widget",
+      "ownerSide": true,
+      "relationshipName": "item",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "dashboard",
+      "otherEntityRelationshipName": "dashboardItem",
+      "relationshipName": "items",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115152548",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "api",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Api",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "apiBannette",
+      "ownerSide": true,
+      "relationshipName": "api",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

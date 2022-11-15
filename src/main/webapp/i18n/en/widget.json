@@ -1,0 +1,28 @@
+{
+  "dashBoardDynamiqueApp": {
+    "widget": {
+      "home": {
+        "title": "Widgets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Widget",
+        "createOrEditLabel": "Create or edit a Widget",
+        "notFound": "No Widgets found"
+      },
+      "created": "A new Widget is created with identifier {{ param }}",
+      "updated": "A Widget is updated with identifier {{ param }}",
+      "deleted": "A Widget is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Widget {{ id }}?"
+      },
+      "detail": {
+        "title": "Widget"
+      },
+      "id": "ID",
+      "name": "Name",
+      "title": "Title",
+      "componentName": "Component Name",
+      "componentType": "Component Type",
+      "widget": "Widget"
+    }
+  }
+}

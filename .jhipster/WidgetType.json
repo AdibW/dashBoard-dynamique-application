@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20221115152546",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "widget_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "WidgetType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dataSource",
+      "ownerSide": true,
+      "relationshipName": "widgetType",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
